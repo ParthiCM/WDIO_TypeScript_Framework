@@ -1,0 +1,9 @@
+{
+    "id": {
+        "username": "#username",
+        "password":"#password"
+    },
+    "css":{
+        "submitButton" : "button[type='submit']"
+    }
+}
