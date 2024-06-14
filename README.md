@@ -33,4 +33,4 @@ Generate Report with npm scripts
 
 ## Sample Report
 
-![alt text](sampleAllureTestreport\image.png)
+![Sample Allure Report](image.png)
