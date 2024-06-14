@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio",
+    "loginTest": "wdio wdio.conf_loginTest.ts",
+    "E2ETest": "wdio wdio.conf.ts",
     "Open-Allure-Report": "npx allure serve allure-results"
   },
   "keywords": [],
