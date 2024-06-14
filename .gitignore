@@ -45,6 +45,9 @@ jspm_packages/
 # Allure Report
 allure-results/
 
+# Debug
+.vscode/
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 

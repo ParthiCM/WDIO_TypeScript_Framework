@@ -8,7 +8,7 @@ class loginPageCommand {
     public async SetPassword(value: string) {
         await loginElementFactory.inputPassword().setValue(value);
     }
-    public async ClickSubmitButton() {
+    public async ClickLoginButton() {
         await loginElementFactory.btnSubmit().click();
     }
 }

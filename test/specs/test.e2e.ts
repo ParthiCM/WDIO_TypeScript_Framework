@@ -1,23 +1,25 @@
-// import { expect } from '@wdio/globals'
-// import SecurePage from '../pageobjects/secure.page'
 import LoginPage from '../pageobjects/login.page';
+import Helper from '../pageobjects/CommonHelpers/Helper.ts';
+import { FormText } from '../Utilities/UserData/FormText.json';
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
-        await LoginPage.open()
 
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!')
-        // await expect(SecurePage.flashAlert).toBeExisting()
-        // await expect(SecurePage.flashAlert).toHaveTextContaining(
-        //     'You logged into a secure area!')
-        // await expect(SecurePage.flashAlert).toMatchElementSnapshot('flashAlert')
+describe('Orange HRM Application Login Test', () => {
+
+    it('TC1 - Check User able to login to application without passing the username and password', async () => {
+        await LoginPage.open();
+        await LoginPage.login('', '');
+        await expect(await Helper.verifyPageTitle(FormText.OrangeHRM.toLocaleLowerCase())).toEqual(true);
+    })
+
+    it('TC2 - Check User able to login to application without passing the username and password', async () => {
+        await LoginPage.open();
+        await LoginPage.login(FormText.userName, '');
+        await expect(await Helper.verifyPageTitle(FormText.OrangeHRM.toLocaleLowerCase())).toEqual(true);
     })
 })
 
-
 // TC1
 // Check Empty Fields:
-
 // Click the login button with both the username and password fields left empty and verify that appropriate error messages are displayed.
 
 // TC2

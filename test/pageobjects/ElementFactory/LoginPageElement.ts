@@ -1,15 +1,14 @@
 import { $ } from '@wdio/globals'
-import {id} from '../Selectors/CssSelector.json'
 import {css} from '../Selectors/CssSelector.json'
 
 class loginElementFactory   {
 
      public inputUsername () {
-        return $(id.username);
+        return $(css.usernameInputBox);
     }
 
     public inputPassword () {
-        return $(id.password);
+        return $(css.passwordInputBox);
     }
 
     public btnSubmit () {

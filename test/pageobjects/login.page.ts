@@ -1,42 +1,38 @@
 import Page from './page';
 import loginPageCommand from './Commands/LoginPageCommands';
+import {siteUrl} from '../Utilities/URL/urls.json'
 
 
 /**
  * sub page containing specific selectors and methods for a specific page
  */
 class LoginPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
-    // public get inputUsername () {
-    //     return $('#username');
-    // }
-
-    // public get inputPassword () {
-    //     return $('#password');
-    // }
-
-    // public get btnSubmit () {
-    //     return $('button[type="submit"]');
-    // }
-
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
-    public async login (username: string, password: string) {
-        
-        await loginPageCommand.SetUserName(username);
-        await loginPageCommand.SetPassword(password);
-        await loginPageCommand.ClickSubmitButton();
+    
+    
+    public open () {
+        return super.open(siteUrl.base);
     }
 
-    /**
-     * overwrite specific options to adapt it to page object
-     */
-    public open () {
-        return super.open('login');
+    public async login (username: string, password: string) {
+        this.setUserName(username);
+        this.setPassword(password);
+        this.clickLoginButton();
+    }
+
+    public async setUserName(username:string ){
+        await loginPageCommand.SetUserName(username);
+    }
+
+    public async setPassword(password:string ){
+        await loginPageCommand.SetPassword(password);
+    }
+
+    public async clickLoginButton(){
+        await loginPageCommand.ClickLoginButton();
+    }
+
+    public async verifyPageTitle(){
+        
     }
 }
 

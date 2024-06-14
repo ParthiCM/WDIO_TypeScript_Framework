@@ -3,7 +3,15 @@
         "username": "#username",
         "password":"#password"
     },
+    "className":{
+
+    },
+    "tagname":{
+
+    },
     "css":{
-        "submitButton" : "button[type='submit']"
+        "submitButton" : "button[type='submit']",
+        "usernameInputBox":"input[name='username']",
+        "passwordInputBox":"input[name='password']"
     }
 }
