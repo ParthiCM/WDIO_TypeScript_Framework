@@ -13,6 +13,10 @@ class LoginPage extends Page {
         return super.open(siteUrl.base);
     }
 
+    public async Maximize () {
+       await browser.maximizeWindow();
+    }
+
     public async login (username: string, password: string) {
         this.setUserName(username);
         this.setPassword(password);

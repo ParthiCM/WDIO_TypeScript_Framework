@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean-Allure-Report": "rimraf allure-resultsV1",
     "loginTest": "wdio wdio.conf_loginTest.ts",
     "E2ETest": "wdio wdio.conf.ts",
     "Open-Allure-Report": "npx allure serve allure-results"
@@ -24,6 +25,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "chai": "^5.1.1"
+    "chai": "^5.1.1",
+    "rimraf": "^5.0.7"
   }
 }

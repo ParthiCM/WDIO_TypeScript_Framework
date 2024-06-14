@@ -138,7 +138,9 @@ export const config: Options.Testrunner = {
         [
           "allure",
           {
-            outputDir: "allure-results",
+            outputDir: "allure-results"
+            // disableWebdriverStepsReporting: true,
+            // disableWebdriverScreenshotsReporting: true,
           },
         ],
       ],
@@ -246,6 +248,21 @@ export const config: Options.Testrunner = {
      */
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
     // },
+
+    afterTest: function ( ) {
+
+       browser.pause(3000);
+       browser.takeScreenshot();
+      // if(!passed) {
+      //   await browser.pause(3000);
+      //   await browser.takeScreenshot();
+      //   //browser.executeScript('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed","reason": "Assertions passed"}}');
+      // } else {
+      //   //browser.executeScript('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed","reason": "At least 1 assertion failed"}}');
+      //   await browser.pause(3000);
+      //   await browser.takeScreenshot();
+      // }
+    },
 
 
     /**
