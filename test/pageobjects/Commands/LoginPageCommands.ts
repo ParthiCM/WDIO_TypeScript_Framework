@@ -3,13 +3,13 @@ import loginElementFactory from '../ElementFactory/LoginPageElement';
 class loginPageCommand {
 
     public async SetUserName(value: string) {
-        await loginElementFactory.inputUsername().setValue(value);
+        await loginElementFactory.inputUsername().SetValue(value);
     }
     public async SetPassword(value: string) {
-        await loginElementFactory.inputPassword().setValue(value);
+        await loginElementFactory.inputPassword().SetValue(value);
     }
     public async ClickLoginButton() {
-        await loginElementFactory.btnSubmit().click();
+        await loginElementFactory.btnSubmit().Click();
     }
 }
 

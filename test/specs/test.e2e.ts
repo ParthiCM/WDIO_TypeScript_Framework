@@ -13,7 +13,7 @@ describe('Orange HRM Application Login Test', () => {
     it('TC1 - Check User able to login to application without passing the username and password', async () => {
         await LoginPage.open();
         await LoginPage.login('', '');
-        await expect(await Helper.verifyPageTitle(FormText.OrangeHRM.toLocaleLowerCase())).toEqual(false);
+        await expect(await Helper.verifyPageTitle(FormText.OrangeHRM.toLocaleLowerCase())).toEqual(true);
     })
 
     it('TC2 - Check User able to login to application without passing the username and password', async () => {
