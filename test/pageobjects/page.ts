@@ -11,6 +11,7 @@ export default class Page {
     * @param path path of the sub page (e.g. /path/to/page.html)
     */
     public open (path: string) {
+        browser.setTimeout({ 'implicit': 10000 });
         return browser.url(`${path}/web/auth/login`);
     }
     

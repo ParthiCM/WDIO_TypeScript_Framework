@@ -4,11 +4,14 @@ import { FormText } from '../Utilities/UserData/FormText.json';
 
 
 describe('Orange HRM Application Login Test', () => {
-    // afterEach(async function () {
-    //     var testanme = this.currentTest?.title?.split("-")[0];
-    //     console.log("Testname" + testanme);
-    //     await Helper.captureScreenshot(testanme)
-    // });
+
+    afterEach(async function () { // Capture Screenshot on Test Failure 
+        if(this.currentTest?.state === "failed"){
+            var testanme = this.currentTest?.title?.split("-")[0];
+            console.log("Testname" + testanme);
+            await Helper.captureScreenshot(testanme)
+        }
+    });
 
     it('TC1 - Check User able to login to application without passing the username and password', async () => {
         await LoginPage.open();
@@ -16,9 +19,27 @@ describe('Orange HRM Application Login Test', () => {
         await expect(await Helper.verifyPageTitle(FormText.OrangeHRM.toLocaleLowerCase())).toEqual(true);
     })
 
-    it('TC2 - Check User able to login to application without passing the username and password', async () => {
+    it('TC2 - Check User able to login to application without passing the and with valid password', async () => {
         await LoginPage.open();
         await LoginPage.login(FormText.userName, '');
+        await expect(await Helper.verifyPageTitle(FormText.OrangeHRM.toLocaleLowerCase())).toEqual(true);
+    })
+
+    it('TC3 - Check User able to login to application without passing the valid username and without password', async () => {
+        await LoginPage.open();
+        await LoginPage.login('', FormText.password);
+        await expect(await Helper.verifyPageTitle(FormText.OrangeHRM.toLocaleLowerCase())).toEqual(true);
+    })
+
+    it('TC4 - Check User able to login to application with Invalid characters as Username', async () => {
+        await LoginPage.open();
+        await LoginPage.login('!@#$%^&*()', FormText.password);
+        await expect(await Helper.verifyPageTitle(FormText.OrangeHRM.toLocaleLowerCase())).toEqual(true);
+    })
+
+    it('TC5 - Check User able to login to application with preceeding and succeeding spaces in Username', async () => {
+        await LoginPage.open();
+        await LoginPage.login(` ${FormText.userName} `, FormText.password);
         await expect(await Helper.verifyPageTitle(FormText.OrangeHRM.toLocaleLowerCase())).toEqual(true);
     })
 })
