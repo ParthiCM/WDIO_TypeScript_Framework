@@ -1,13 +1,12 @@
 # Webdriver IO CLI Test FrameWork 
 
 
-This is the Initial frame work for automating the web application
 
 ## Hybrid Page Object Model 
 
-This framework is an extended version of POM (Page Object Model) that helps users wrap individual elements as predefined control types. Each control type has specific actions, which can be direct or a combination of multiple actions.
+- This framework is an extended version of POM (Page Object Model) that helps users wrap individual elements as predefined control types. Each control type has specific actions, which can be direct or a combination of multiple actions.
 
-Thus, whenever an element is wrapped in a control type, users can directly access all actions specified for that element.
+- Thus, whenever an element is wrapped in a control type, users can directly access all actions specified for that element.
  
 ## Installation
 
