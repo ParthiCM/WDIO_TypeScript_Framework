@@ -1,5 +1,6 @@
 {
     "siteUrl" : {
-        "base" : "https://opensource-demo.orangehrmlive.com"
+        "base" : "https://opensource-demo.orangehrmlive.com",
+        "dashboard":"/web/dashboard/index"
     }
 }

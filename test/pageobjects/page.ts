@@ -10,9 +10,16 @@ export default class Page {
     * Opens a sub page of the page
     * @param path path of the sub page (e.g. /path/to/page.html)
     */
-    public open (path: string) {
-        browser.setTimeout({ 'implicit': 10000 });
-        return browser.url(`${path}/web/auth/login`);
+    public async open(path: string) {
+
+        var url = await browser.url(`${path}/web/auth/login`);
+        await this.Maximize();
+        await browser.setTimeout({ 'implicit': 3000 });
+        return url;
     }
-    
+
+    public async Maximize() {
+        await browser.maximizeWindow();
+    }
+
 }

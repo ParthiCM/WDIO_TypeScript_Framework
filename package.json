@@ -6,6 +6,7 @@
   "scripts": {
     "clean-Allure-Report": "rimraf allure-resultsV1",
     "loginTest": "wdio wdio.conf_loginTest.ts",
+    "dashboardTest": "wdio wdio.conf_dashboardTest.ts",
     "E2ETest": "wdio wdio.conf.ts",
     "Open-Allure-Report": "npx allure serve allure-results"
   },

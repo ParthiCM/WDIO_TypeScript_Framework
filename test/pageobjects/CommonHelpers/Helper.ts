@@ -11,6 +11,11 @@ class Helper extends Page {
         return val === titleToVerify;
     }
 
+    public async verifyPageUrl(UrlToVerify: string) {
+        var val = (await browser.getUrl()).toLocaleLowerCase();
+        console.log(`page url is - ${val}`);
+        return val === UrlToVerify;
+    }
 
     /** Save a screenshot of the current browsing context to a PNG file on your OS. 
     Be aware that some browser drivers take screenshots of the whole document 

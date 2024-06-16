@@ -9,18 +9,15 @@ import {siteUrl} from '../Utilities/URL/urls.json'
 class LoginPage extends Page {
     
     
-    public open () {
-        return super.open(siteUrl.base);
+    public async open () {
+        return await super.open(siteUrl.base);
     }
 
-    public async Maximize () {
-       await browser.maximizeWindow();
-    }
 
     public async login (username: string, password: string) {
-        this.setUserName(username);
-        this.setPassword(password);
-        this.clickLoginButton();
+        await this.setUserName(username);
+        await this.setPassword(password);
+        await this.clickLoginButton();
     }
 
     public async setUserName(username:string ){
@@ -35,9 +32,6 @@ class LoginPage extends Page {
         await loginPageCommand.ClickLoginButton();
     }
 
-    public async verifyPageTitle(){
-        
-    }
 }
 
 export default new LoginPage();

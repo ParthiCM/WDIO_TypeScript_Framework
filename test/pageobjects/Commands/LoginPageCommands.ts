@@ -9,6 +9,8 @@ class loginPageCommand {
         await loginElementFactory.inputPassword().SetValue(value);
     }
     public async ClickLoginButton() {
+        await loginElementFactory.btnSubmit().WaitForElementDisplayed(2000);
+        await loginElementFactory.btnSubmit().WaitForElementEnabled(2000);
         await loginElementFactory.btnSubmit().Click();
     }
 }

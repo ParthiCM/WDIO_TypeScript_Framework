@@ -6,7 +6,7 @@ export class Textbox extends Controls {
         super(element);
     }
 
-     public async SetValue(valueToSet:string, clearBeforeSetValue:boolean = false){
+     public async SetValue(valueToSet:string, clearBeforeSetValue:boolean = true){
        if(clearBeforeSetValue){
         (await this.Element).clearValue();
        }

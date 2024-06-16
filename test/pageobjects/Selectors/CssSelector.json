@@ -4,7 +4,7 @@
         "password":"#password"
     },
     "className":{
-
+        "userDropdown":".oxd-userdropdown-tab"
     },
     "tagname":{
 
@@ -12,6 +12,7 @@
     "css":{
         "submitButton" : "button[type='submit']",
         "usernameInputBox":"input[name='username']",
-        "passwordInputBox":"input[name='password']"
+        "passwordInputBox":"input[name='password']",
+        "logout" : ".oxd-dropdown-menu li:nth-child(4)" 
     }
 }
